@@ -32,7 +32,7 @@ services:
       - ./nginx@1.15/config/vhost-dev.conf:/etc/nginx/conf.d/100-default.conf
 
   fpm:
-    image: kiboko/php:7.1-fpm-marello-dev
+    image: kiboko/php:7.2-fpm-marello-dev
     build:
       context: php@7.2/fpm-xdebug
     volumes:
@@ -45,7 +45,7 @@ services:
       - 8080:8080
 
   cli:
-    image: kiboko/php:7.1-cli-marello-dev
+    image: kiboko/php:7.2-cli-marello-dev
     build:
       context: php@7.2/cli-xdebug
     volumes:

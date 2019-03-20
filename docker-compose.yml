@@ -36,7 +36,7 @@ services:
     restart: on-failure
 
   fpm:
-    image: kiboko/php:7.1-fpm-marello
+    image: kiboko/php:7.2-fpm-marello
     build:
       context: php@7.2/fpm
     user: docker:docker
@@ -45,7 +45,7 @@ services:
     restart: on-failure
 
   ws:
-    image: kiboko/php:7.1-cli-marello
+    image: kiboko/php:7.2-cli-marello
     build:
       context: php@7.2/cli
     command: ["bin/console", "gos:websocket:server", "--env=prod"]
@@ -55,7 +55,7 @@ services:
     restart: on-failure
 
   mq:
-    image: kiboko/php:7.1-cli-marello
+    image: kiboko/php:7.2-cli-marello
     build:
       context: php@7.2/cli
     command: ["bin/console", "oro:message-queue:consume", "--env=prod", "-vv"]
@@ -65,7 +65,7 @@ services:
     restart: on-failure
 
   cli:
-    image: kiboko/php:7.1-cli-marello
+    image: kiboko/php:7.2-cli-marello
     build:
       context: php@7.2/cli
     user: docker:docker
